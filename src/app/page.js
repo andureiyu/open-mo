@@ -6,6 +6,7 @@ import { FaCheck, FaTimes } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import SplitText from "./SplitText"; 
 import { Gamja_Flower } from "next/font/google"; // Import the font
+import Image from "next/image"; // Import `Image` from next/image
 
 const gamjaFlower = Gamja_Flower({
   subsets: ["latin"],
@@ -76,10 +77,13 @@ export default function Home() {
       className="flex flex-col items-center justify-center h-screen px-4 bg-[#ffeeba]"
       style={{ cursor: "url('/cursor/stardew-val.cur'), auto" }} // Custom cursor applied here
     >
-      <img
+      {/* Replace <img> with <Image /> */}
+      <Image
         src="/assets/images/bunny-unscreen.gif"
         alt="Animated Bunny"
-        className="w-32 h-32 mb-4"
+        className="mb-4"
+        width={128} // Set width based on w-32 (32 * 4 = 128px)
+        height={128} // Set height based on h-32 (32 * 4 = 128px)
       />
 
       {/* Animated H1 with SplitText */}

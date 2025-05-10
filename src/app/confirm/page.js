@@ -1,11 +1,10 @@
 "use client";
 
-
 import { motion } from "framer-motion";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
-
+import Image from "next/image"; // Import `Image` from next/image
 
 export default function Confirm() {
   const router = useRouter();
@@ -49,13 +48,14 @@ export default function Confirm() {
       className="flex flex-col items-center justify-center h-screen px-4 bg-[#ffeeba]"
       style={{ cursor: "url('/cursor/stardew-val.cur'), auto" }}
     >
-
-<img 
-      src="/assets/images/bunnyusure.gif"
-      alt="Animated Bunny"
-      className="w-32 h32 mb-4"
-    />
-
+      {/* Replace <img> with <Image /> */}
+      <Image 
+        src="/assets/images/bunnyusure.gif"
+        alt="Animated Bunny"
+        className="w-32 h-32 mb-4"
+        width={128} // Specify width
+        height={128} // Specify height
+      />
 
       <h1
         className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center mb-4 text-[#4c361d]"
@@ -67,32 +67,32 @@ export default function Confirm() {
       >
         Do you want to proceed?
       </p>
-    <div className="flex flex-row space-x-4 sm:space-x-[60px]">
-           <motion.button
-             className="flex items-center justify-center px-6 py-3 bg-[#ffeeba] text-[#4c361d] text-lg font-semibold rounded-lg border-4 border-[#4c361d] shadow-[4px_4px_0px_#4c361d] hover:shadow-[6px_6px_0px_#4c361d] hover:bg-[#fddca1] transition-all duration-300"
-             style={{ cursor: "url('/cursor/stardew-val.cur'), auto" }}
-             whileHover={{ scale: 1.1 }}
-             whileTap={{ scale: 0.9 }}
-             onClick={() => {
-               playYesSound();
-               router.push("/letter");
-             }}
-           >
-             <FaCheck className="mr-2" /> Yes
-           </motion.button>
-           <motion.button
-             className="flex items-center justify-center px-6 py-3 bg-[#ffeeba] text-[#4c361d] text-lg font-semibold rounded-lg border-4 border-[#4c361d] shadow-[4px_4px_0px_#4c361d] hover:shadow-[6px_6px_0px_#4c361d] hover:bg-[#fddca1] transition-all duration-300"
-             style={{ cursor: "url('/cursor/stardew-val.cur'), auto" }}
-             whileHover={{ scale: 1.1 }}
-             whileTap={{ scale: 0.9 }}
-             onClick={() => {
-               playNoSound();
-               router.push("/naur1");
-             }}
-           >
-             <FaTimes className="mr-2" /> Naur
-           </motion.button>
-         </div>
+      <div className="flex flex-row space-x-4 sm:space-x-[60px]">
+        <motion.button
+          className="flex items-center justify-center px-6 py-3 bg-[#ffeeba] text-[#4c361d] text-lg font-semibold rounded-lg border-4 border-[#4c361d] shadow-[4px_4px_0px_#4c361d] hover:shadow-[6px_6px_0px_#4c361d] hover:bg-[#fddca1] transition-all duration-300"
+          style={{ cursor: "url('/cursor/stardew-val.cur'), auto" }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            playYesSound();
+            router.push("/letter");
+          }}
+        >
+          <FaCheck className="mr-2" /> Yes
+        </motion.button>
+        <motion.button
+          className="flex items-center justify-center px-6 py-3 bg-[#ffeeba] text-[#4c361d] text-lg font-semibold rounded-lg border-4 border-[#4c361d] shadow-[4px_4px_0px_#4c361d] hover:shadow-[6px_6px_0px_#4c361d] hover:bg-[#fddca1] transition-all duration-300"
+          style={{ cursor: "url('/cursor/stardew-val.cur'), auto" }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            playNoSound();
+            router.push("/naur1");
+          }}
+        >
+          <FaTimes className="mr-2" /> Naur
+        </motion.button>
+      </div>
 
       {/* Audio Elements */}
       <audio ref={yesAudioref} src="/audio/pop-7.mp3" preload="auto"></audio>

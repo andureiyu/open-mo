@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image"; // Import `Image` from next/image
+
 export default function naur1() {
   return (
     <div
@@ -11,10 +13,13 @@ export default function naur1() {
 
       {/* GIF at the Center */}
       <div className="z-10 flex flex-col items-center">
-        <img
+        {/* Replace <img> with <Image /> */}
+        <Image
           src="/assets/images/toastedcat.gif"
           alt="Centered GIF"
-          className="w-64 h-64 object-contain mb-4" // Added margin below the GIF
+          className="object-contain mb-4" // Added margin below the GIF
+          width={256} // Set width based on w-64 (64 * 4 = 256px)
+          height={256} // Set height based on h-64 (64 * 4 = 256px)
         />
 
         {/* Heading Below the GIF */}
