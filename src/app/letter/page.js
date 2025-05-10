@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { PiFlowerTulipLight } from "react-icons/pi";
 import { MdOutlineReplay } from "react-icons/md";
 
-
 export default function Letter() {
   const [isLetterOpen, setIsLetterOpen] = useState(false);
   const [isEnvelopeOpening, setIsEnvelopeOpening] = useState(false);
@@ -110,14 +109,14 @@ export default function Letter() {
         </div>
       )}
 
-     <motion.button
-  className="fixed top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 bg-[#ffeeba] text-[#4c361d] text-lg font-semibold rounded-full border-4 border-[#4c361d] shadow-[4px_4px_0px_#4c361d] hover:shadow-[6px_6px_0px_#4c361d] hover:bg-[#fddca1] transition-all duration-300 flex items-center justify-center z-50"
-  whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.9 }}
-  onClick={handleHomeClick}
->
-  <MdOutlineReplay className="w-6 h-6" /> {/* Replay icon added here */}
-</motion.button>
+      <motion.button
+        className="fixed top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 bg-[#ffeeba] text-[#4c361d] text-lg font-semibold rounded-full border-4 border-[#4c361d] shadow-[4px_4px_0px_#4c361d] hover:shadow-[6px_6px_0px_#4c361d] hover:bg-[#fddca1] transition-all duration-300 flex items-center justify-center z-50"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={handleHomeClick}
+      >
+        <MdOutlineReplay className="w-6 h-6" />
+      </motion.button>
 
       {!isLetterOpen ? (
         <>
@@ -188,25 +187,7 @@ export default function Letter() {
             Hi Yass!
             <br />
             <br />
-            Medyo nervous ako sabihin ito sayo pero I just want to say that
-            there is someone who really likes you and always finds you really
-            pretty and sweet, and that person is me, haha. I've always liked
-            your vibe, your personality, your flaws, and, most importantly, your
-            kindliness. I think it is very obvious na, but I've had this feeling
-            since last year. You always show positivity around people, which I
-            greatly appreciate. Even though I am very shy, especially when I try
-            my best to say hi to you all the time at school, but you always make
-            me feel happy, and isa yan sa mga reasons ko bakit hindi ako absent
-            sa mga NSTP classes HAHAHA. Sometimes, I always wonder if making
-            this is okay for you, but to me, this is how I show my appreciation
-            and a way to express yung feelings ko in a creative and a more
-            sincere way through coding. But no pressure! You don't need to
-            reciprocate or like me back or anything. I understand you fully, and
-            I just want to be kind to you and to your friends naman din, always
-            in all ways. Keep up the amazing things you are doing since you are
-            an amazing person to many people, including me. It's such an honor
-            meeting you, and I do hope nothing will change between us and we'd
-            stay friends. 😇
+            Medyo nervous ako sabihin ito sayo pero I just want to say that there is someone who really likes you and always finds you really pretty and sweet, and that person is me, haha. I&apos;ve always liked your vibe, your personality, your flaws, and, most importantly, your kindliness. I think it is very obvious na, but I&apos;ve had this feeling since last year. You always show positivity around people, which I greatly appreciate. Even though I am very shy, especially when I try my best to say hi to you all the time at school, but you always make me feel happy, and isa yan sa mga reasons ko bakit hindi ako absent sa mga NSTP classes HAHAHA. Sometimes, I always wonder if making this is okay for you, but to me, this is how I show my appreciation and a way to express yung feelings ko in a creative and a more sincere way through coding. But no pressure! You don&apos;t need to reciprocate or like me back or anything. I understand you fully, and I just want to be kind to you and to your friends naman din, always in all ways. Keep up the amazing things you are doing since you are an amazing person to many people, including me. It&apos;s such an honor meeting you, and I do hope nothing will change between us and we&apos;d stay friends. 😇
             <br />
             <br />
             Take care always!
@@ -214,8 +195,7 @@ export default function Letter() {
             Drei^^
           </p>
           <p className="text-sm sm:text-base md:text-lg text-[#6B4226] leading-relaxed text-justify max-w-[32rem] mt-6">
-            P.S. I'm very sorry if I ever made you feel uncomfortable or
-            awkward. It's one of my fears din.
+            P.S. I&apos;m very sorry if I ever made you feel uncomfortable or awkward. It&apos;s one of my fears din.
           </p>
         </motion.div>
       )}
