@@ -54,6 +54,27 @@ export default function Letter() {
     return () => clearTimeout(timeout);
   }, []);
 
+  useEffect(() => {
+    const handleUserInteraction = () => {
+      if (pageLoadAudioRef.current) {
+        try {
+          pageLoadAudioRef.current.play();
+        } catch (error) {
+          console.warn("Audio playback failed:", error);
+        }
+      }
+      // Remove the event listener after the first interaction
+      document.removeEventListener("click", handleUserInteraction);
+    };
+
+    // Add an event listener for user interaction
+    document.addEventListener("click", handleUserInteraction);
+
+    return () => {
+      document.removeEventListener("click", handleUserInteraction);
+    };
+  }, []);
+
   return (
     <div
       className={`relative flex flex-col items-center justify-center min-h-screen px-4 transition-colors duration-1000 ${
@@ -180,8 +201,13 @@ export default function Letter() {
             damping: 15,
           }}
         >
-          <h1 className="text-xl sm:text-3xl md:text-5xl font-bold mb-6 text-[#ff878d] text-center flex items-center justify-center">
-            For You <PiFlowerTulipLight className="ml-2 text-[#ff878d]" />
+          <h1 className="text-xl sm:text-3xl md:text-5xl font-bold mb-6 text-[#ff878d] text-center flex items-center justify-center gap-2">
+            <span>For You</span>
+            <img 
+              src="/assets/images/oyennn-bunga-unscreen.gif" 
+              alt="GIF" 
+              className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 relative -top-2" 
+            />
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-[#6B4226] leading-relaxed text-justify max-w-[32rem]">
             Hi Yass!

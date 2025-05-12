@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "For You :D",
+  title: "Open Mo",
   description: "app for ----",
 };
 
@@ -27,7 +27,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={gamjaFlower.class}>
       <head>
-        <link rel="icon" href="/assets/images/pinkheart.png" />
+        {/* Favicon for consistent use across all pages */}
+        <link rel="icon" href="/assets/images/redheart.jpg" />
       </head>
       <body>{children}</body>
     </html>
